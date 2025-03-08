@@ -22,7 +22,7 @@ $ npm run start:dev
 
 ### Scraping
 - Si le nombre d'articles à scraper augmente, le scraping devrait être executé de manière asynchrone en utilisant un système de queues.
-- Un système de jobs permettrait alors de répartir la charge des écritures en DB en la diluant sur une plus gran de période de temps.
+- Un système de jobs permettrait alors de répartir la charge des écritures en DB en la diluant sur une plus grande période de temps.
 - L'architecture du code permettrait aussi la création de nouveaux scrapers qui viendraient feed la queue, et les routes pourraient évoluer vers une liste sous /scraping, i.e /scraping/ycombinator, /scraping/bbcnews.
 
 ### DB
@@ -43,6 +43,9 @@ SELECT * FROM articles
 WHERE publishedDate >= NOW() - INTERVAL 7 DAY
 ORDER BY publishedDate DESC;
 ```
+
+### Swagger
+- Visit http://localhost:3000/api
 
 ## Run tests
 
